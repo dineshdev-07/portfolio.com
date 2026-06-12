@@ -25,7 +25,7 @@ export default function Projects({ projects }) {
             }}
             className="rounded-[2rem] border border-[var(--border-soft)] bg-[var(--surface-card)] p-7 shadow-[var(--shadow-soft)] sm:p-8"
           >
-            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start h-56">
+            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
               <div>
                 <h3 className="text-2xl font-semibold tracking-[-0.05em] text-[var(--text-primary)]">
                   {project.title}
