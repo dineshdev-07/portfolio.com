@@ -67,7 +67,7 @@ export const resumeData = {
       period: "6 Months",
       type: "Experience",
       description: "Completed a 6-month MERN stack internship, developing modern web applications and RESTful APIs.",
-      certificateHref: "sdlc.png",
+      certificateHref: "/sdlc.png",
     },
     {
       title: "Web Development Intern",
