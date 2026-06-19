@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import SectionShell from "./SectionShell";
+import sdlc from '../public/sdlc.png'
 
 function TimelineCard({ item, index }) {
-  const hasCertificate = Boolean(item.certificateHref);
+
 
   return (
     <motion.article
@@ -41,11 +42,11 @@ function TimelineCard({ item, index }) {
         <div className="flex items-center justify-center gap-4 lg:justify-end">
           {hasCertificate ? (
             <a
-              href={item.certificateHref}
+              href={sdlc}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"
-              aria-label={`View certificate for ${item.title}`}
+              
             >
               <Award size={20} />
             </a>
