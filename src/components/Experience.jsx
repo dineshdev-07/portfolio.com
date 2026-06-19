@@ -40,18 +40,15 @@ function TimelineCard({ item, index }) {
         </div>
 
         <div className="flex items-center justify-center gap-4 lg:justify-end">
-          {hasCertificate ? (
             <a
-              href={sdlc}
+              href="/sdlc.png"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"
-              
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"             
             >
               <Award size={20} />
             </a>
-          ) : null}
-
+         
           <p className="min-w-[72px] text-left text-sm font-medium text-[var(--text-muted)] lg:text-right">
             {item.period}
           </p>
