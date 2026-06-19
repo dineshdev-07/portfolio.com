@@ -67,7 +67,7 @@ export const resumeData = {
       period: "6 Months",
       type: "Experience",
       description: "Completed a 6-month MERN stack internship, developing modern web applications and RESTful APIs.",
-      certificateHref: "/certificates/intern-certificate.pdf",
+      certificateHref: "sdlc.png",
     },
     {
       title: "Web Development Intern",
@@ -88,13 +88,13 @@ export const resumeData = {
     {
       label: "Phone",
       value: "+91 78100 70599",
-      href: "tel:+917810070599",
+      href: "tel:+91 7810070599",
     },
     {
       label: "Social",
       links: [
-        { label: "GitHub", href: "https://github.com/your-username" },
-        { label: "LinkedIn", href: "https://linkedin.com/in/your-profile" },
+        { label: "GitHub", href: "https://github.com/dineshdev-07" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/dinesh-m-001229406/" },
       ],
     },
   ],
