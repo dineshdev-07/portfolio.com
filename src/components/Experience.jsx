@@ -55,9 +55,9 @@ function TimelineCard({ item, index }) {
           </p>
         </div>
       </div>
-      {showCertificate && item.certificateImage && (
+      {showCertificate && item.certificateHref && (
         <img
-          src={item.certificateImage}
+          src={item.certificateHref}
           alt="Certificate"
           className="mt-4 w-full rounded-xl border"
         />
