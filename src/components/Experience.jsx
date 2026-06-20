@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import SectionShell from "./SectionShell";
-
+import { useState } from "react";
 function TimelineCard({ item, index }) {
-  const hasCertificate = Boolean(item.certificateHref);
+  const [showCertificate, setShowCertificate] = useState(false);
+const hasCertificate = Boolean(item.certificateHref);
 
   return (
     <motion.article
@@ -46,22 +47,46 @@ function TimelineCard({ item, index }) {
 
         <div className="flex items-center justify-center gap-4 lg:justify-end">
           {hasCertificate && (
-            <a
-              href={item.certificateHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"
-              aria-label={`View certificate for ${item.title}`}
-            >
-              <Award size={20} />
-            </a>
-          )}
+  <button
+    onClick={() => setShowCertificate(true)}
+    className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"
+  >
+    <Award size={20} />
+  </button>
+)}
 
           <p className="min-w-[72px] text-left text-sm font-medium text-[var(--text-muted)] lg:text-right">
             {item.period}
           </p>
         </div>
       </div>
+      {showCertificate && (
+  <div
+    className="fixed inset-0 z-40 bg-black/60 overflow-y-auto"
+    onClick={() => setShowCertificate(false)}
+  >
+    <div
+      className="mx-auto mt-24 mb-10 max-w-5xl px-4"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="relative rounded-3xl border border-[var(--border-soft)] bg-[var(--surface-card)] p-4 shadow-[var(--shadow-soft)]">
+        
+        <button
+          onClick={() => setShowCertificate(false)}
+          className="absolute right-4 top-4 rounded-full border border-[var(--border-soft)] px-3 py-1 text-sm"
+        >
+          ✕
+        </button>
+
+        <img
+          src={item.certificateHref}
+          alt="Certificate"
+          className="w-full rounded-2xl"
+        />
+      </div>
+    </div>
+  </div>
+)}
     </motion.article>
   );
 }
