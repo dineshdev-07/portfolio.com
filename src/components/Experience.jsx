@@ -55,12 +55,18 @@ function TimelineCard({ item, index }) {
           </p>
         </div>
       </div>
-      {showCertificate && item.certificateHref && (
-        <img
-          src={item.certificateHref}
-          alt="Certificate"
-          className="mt-4 w-full rounded-xl border"
-        />
+      {showCertificate && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+          onClick={() => setShowCertificate(false)}
+        >
+          <img
+            src={item.certificateHref}
+            alt="Certificate"
+            className="max-h-[90vh] max-w-[90vw] rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
       )}
     </motion.article>
   );
