@@ -107,22 +107,22 @@ export default function Skills() {
                     <div
                       key={skill.name}
                       className="
-                        flex
-                        items-center
-                        gap-2
-                        rounded-full
-                        border
-                        border-[var(--border-soft)]
-                        bg-[var(--surface-raised)]
-                        px-4
-                        py-2
-                        text-sm
-                        transition
-                        hover:-translate-y-1
-                      "
+      flex
+      items-center
+      gap-2
+      rounded-full
+      border
+      border-[var(--border-soft)]
+      bg-[var(--surface-raised)]
+      px-4
+      py-2
+      text-sm
+      transition
+      hover:-translate-y-1
+    "
                     >
-                      <Icon size={20} />
-                      className={skill.color}
+                      <Icon size={20} className={skill.color} />
+                      <span>{skill.name}</span>
                     </div>
                   );
                 })}

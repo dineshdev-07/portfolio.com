@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import SectionShell from "./SectionShell";
-import { useState } from "react";
 
 function TimelineCard({ item, index }) {
   const hasCertificate = Boolean(item.certificateHref);
-  const [showCertificate, setShowCertificate] = useState(false);
 
   return (
     <motion.article
@@ -32,54 +30,38 @@ function TimelineCard({ item, index }) {
           <p className="mt-1 text-lg text-[var(--text-secondary)]">
             {item.organization}
           </p>
+
           {item.cgpa && (
             <p className="mt-1 text-sm text-[var(--text-muted)]">
               CGPA: {item.cgpa}
             </p>
           )}
 
-          {item.description ? (
+          {item.description && (
             <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
               {item.description}
             </p>
-          ) : null}
+          )}
         </div>
-        {item.certificateHref && (
-          <img
-            src={item.certificateHref}
-            alt="Certificate Preview"
-            className="mt-4 h-24 w-auto cursor-pointer rounded-lg border object-cover"
-            onClick={() => setShowCertificate(true)}
-          />
-        )}
+
         <div className="flex items-center justify-center gap-4 lg:justify-end">
-          {hasCertificate ? (
-            <button
-              onClick={() => window.open(item.certificateHref, "_blank")}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-soft)]"
+          {hasCertificate && (
+            <a
+              href={item.certificateHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"
+              aria-label={`View certificate for ${item.title}`}
             >
               <Award size={20} />
-            </button>
-          ) : null}
+            </a>
+          )}
 
           <p className="min-w-[72px] text-left text-sm font-medium text-[var(--text-muted)] lg:text-right">
             {item.period}
           </p>
         </div>
       </div>
-      {showCertificate && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          onClick={() => setShowCertificate(false)}
-        >
-          <img
-            src={item.certificateHref}
-            alt="Certificate"
-            className="max-h-[90vh] max-w-[90vw] rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </motion.article>
   );
 }
@@ -91,8 +73,7 @@ export default function Experience({ education, experience }) {
     <SectionShell
       id="experience"
       eyebrow="Experience"
-      title="Education & Experience "
-      // description="A minimal overview of internship, workshop, and academic background."
+      title="Education & Experience"
     >
       <div className="relative grid gap-5 before:absolute before:left-4 before:top-0 before:hidden before:h-full before:w-px before:bg-[var(--border-soft)] lg:before:block">
         {timelineItems.map((item, index) => (
