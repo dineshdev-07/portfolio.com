@@ -10,7 +10,7 @@ export const resumeData = {
     "Computer Science graduate focused on modern web development, problem-solving, and building clean digital experiences with a mindset of continuous learning and growth.",
 
   summary:
-    "Detail-oriented and Computer Science graduate with strong foundations in web development, problem-solving, and modern technologies, seeking an entry-level opportunity to contribute technical skills, adaptability, and continuous learning mindset to organizational success.",
+    "Detail-oriented Computer Science graduate with strong analytical and problem-solving abilities and a passion for technology. Focused on developing scalable, user-centric solutions while maintaining clean and efficient code. Committed to continuous learning, professional growth, and contributing effectively to dynamic development teams.",
   location: "Madurai",
   resumeHref: "/resume.pdf",
   stats: [
@@ -18,28 +18,28 @@ export const resumeData = {
     { label: "Projects", value: "1" },
     { label: "Location", value: "Madurai" },
   ],
-  skills: [
-    {
-      title: "Language",
-      items: ["JavaScript (ES6)"],
-    },
-    {
-      title: "Frontend",
-      items: ["HTML5", "CSS3", "React.js", "Bootstrap", "Tailwind CSS"],
-    },
-    {
-      title: "Backend",
-      items: ["Node.js", "Express.js"],
-    },
-    {
-      title: "Database",
-      items: ["MongoDB", "MySQL"],
-    },
-    {
-      title: "Tools & Platform",
-      items: ["Git", "GitHub", "VS Code", "Postman"],
-    },
-  ],
+  // skills: [
+  //   {
+  //     title: "Language",
+  //     items: ["JavaScript (ES6)"],
+  //   },
+  //   {
+  //     title: "Frontend",
+  //     items: ["HTML5", "CSS3", "React.js", "Bootstrap", "Tailwind CSS"],
+  //   },
+  //   {
+  //     title: "Backend",
+  //     items: ["Node.js", "Express.js"],
+  //   },
+  //   {
+  //     title: "Database",
+  //     items: ["MongoDB", "MySQL"],
+  //   },
+  //   {
+  //     title: "Tools & Platform",
+  //     items: ["Git", "GitHub", "VS Code", "Postman"],
+  //   },
+  // ],
   projects: [
     {
       title:
@@ -62,6 +62,7 @@ export const resumeData = {
       title: "Bachelor of Engineering in Computer Science",
       organization: "RVS School of Engineering & Technology, Dindigul",
       period: "2022 - 2026",
+      cgpa: "7.5",
       type: "Education",
     },
   ],

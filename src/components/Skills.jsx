@@ -12,6 +12,7 @@ import {
 
 import {
   SiJavascript,
+  SiVercel, SiRender ,
   SiTailwindcss,
   SiExpress,
   SiMongodb,
@@ -19,66 +20,44 @@ import {
   SiPostman,
 } from "react-icons/si";
 
-const skills = [
+const skillGroups = [
   {
-    name: "JavaScript ES6",
-    icon: SiJavascript,
-    color: "text-yellow-400",
+    title: "Frontend",
+   
+    skills: [
+      { name: "React", icon: FaReact },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "HTML5", icon: FaHtml5 },
+      { name: "CSS3", icon: FaCss3Alt },
+      { name: "Tailwind", icon: SiTailwindcss },
+    ],
   },
   {
-    name: "MongoDB",
-    icon: SiMongodb,
-    color: "text-green-600",
+    title: "Backend",
+    
+    skills: [
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "Express.js", icon: SiExpress },
+    ],
   },
   {
-    name: "Express",
-    icon: SiExpress,
-    color: "text-[var(--text-primary)]",
+    title: "Database",
+   
+    skills: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+    ],
   },
   {
-    name: "React",
-    icon: FaReact,
-    color: "text-sky-500",
-  },
-  {
-    name: "Node.js",
-    icon: FaNodeJs,
-    color: "text-green-500",
-  },
-  {
-    name: "HTML5",
-    icon: FaHtml5,
-    color: "text-orange-500",
-  },
-  {
-    name: "CSS3",
-    icon: FaCss3Alt,
-    color: "text-blue-500",
-  },
-  {
-    name: "Tailwind",
-    icon: SiTailwindcss,
-    color: "text-cyan-500",
-  },
-  {
-    name: "MySQL",
-    icon: SiMysql,
-    color: "text-blue-600",
-  },
-  {
-    name: "Git",
-    icon: FaGitAlt,
-    color: "text-orange-600",
-  },
-  {
-    name: "GitHub",
-    icon: FaGithub,
-    color: "text-[var(--text-primary)]",
-  },
-  {
-    name: "Postman",
-    icon: SiPostman,
-    color: "text-orange-500",
+    title: "Tools",
+   
+    skills: [
+      { name: "Git", icon: FaGitAlt },
+      { name: "GitHub", icon: FaGithub },
+      { name: "Postman", icon: SiPostman },
+      { name: "Vercel", icon: SiVercel},
+      { name: "Render", icon: SiRender}
+    ],
   },
 ];
 
@@ -90,48 +69,64 @@ export default function Skills() {
       title="Tech Stack"
       description="Technologies and tools I use to build modern web applications."
     >
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-        {skills.map((skill, index) => {
-          const Icon = skill.icon;
+      <div className="grid gap-5 md:grid-cols-2">
+        {skillGroups.map((group, index) => {
+          const MainIcon = group.icon;
 
           return (
             <motion.div
-              key={skill.name}
+              key={group.title}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{
-                duration: 0.35,
-                delay: index * 0.03,
+                duration: 0.4,
+                delay: index * 0.08,
               }}
               className="
-                flex
-                flex-col
-                items-center
-                justify-center
-                rounded-3xl
+                rounded-[1.75rem]
                 border
                 border-[var(--border-soft)]
                 bg-[var(--surface-card)]
                 p-6
-                text-center
-                shadow-sm
+                shadow-[var(--shadow-soft)]
               "
             >
-              <Icon
-                className={`${skill.color} mb-3`}
-                size={38}
-              />
+              <div className="mb-5 flex items-center gap-3">
+                <MainIcon size={28} />
+                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+                  {group.title}
+                </h3>
+              </div>
 
-              <span
-                className="
-                  text-base
-                  font-medium
-                 
-                "
-              >
-                {skill.name}
-              </span>
+              <div className="flex flex-wrap gap-3">
+                {group.skills.map((skill) => {
+                  const Icon = skill.icon;
+
+                  return (
+                    <div
+                      key={skill.name}
+                      className="
+                        flex
+                        items-center
+                        gap-2
+                        rounded-full
+                        border
+                        border-[var(--border-soft)]
+                        bg-[var(--surface-raised)]
+                        px-4
+                        py-2
+                        text-sm
+                        transition
+                        hover:-translate-y-1
+                      "
+                    >
+                      <Icon size={18} />
+                      <span>{skill.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </motion.div>
           );
         })}

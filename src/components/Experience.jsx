@@ -32,6 +32,11 @@ function TimelineCard({ item, index }) {
           <p className="mt-1 text-lg text-[var(--text-secondary)]">
             {item.organization}
           </p>
+          {item.cgpa && (
+            <p className="mt-1 text-sm text-[var(--text-muted)]">
+              CGPA: {item.cgpa}
+            </p>
+          )}
 
           {item.description ? (
             <p className="mt-4 text-base leading-7 text-[var(--text-secondary)]">
@@ -39,15 +44,23 @@ function TimelineCard({ item, index }) {
             </p>
           ) : null}
         </div>
-
+        {item.certificateHref && (
+          <img
+            src={item.certificateHref}
+            alt="Certificate Preview"
+            className="mt-4 h-24 w-auto cursor-pointer rounded-lg border object-cover"
+            onClick={() => setShowCertificate(true)}
+          />
+        )}
         <div className="flex items-center justify-center gap-4 lg:justify-end">
           {hasCertificate ? (
             <button
-              onClick={() => setShowCertificate(!showCertificate)}
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)]"
-            >
-              <Award size={20} />
-            </button>
+  onClick={() => setShowCertificate(true)}
+  className="inline-flex items-center gap-2 rounded-full border px-3 py-2"
+>
+  <Award size={18} />
+  <span>View Certificate</span>
+</button>
           ) : null}
 
           <p className="min-w-[72px] text-left text-sm font-medium text-[var(--text-muted)] lg:text-right">
