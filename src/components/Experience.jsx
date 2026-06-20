@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import SectionShell from "./SectionShell";
+import { useState } from "react";
 
 function TimelineCard({ item, index }) {
   const hasCertificate = Boolean(item.certificateHref);
+  const [showCertificate, setShowCertificate] = useState(false);
 
   return (
     <motion.article
@@ -40,15 +42,12 @@ function TimelineCard({ item, index }) {
 
         <div className="flex items-center justify-center gap-4 lg:justify-end">
           {hasCertificate ? (
-            <a
-              href={item.certificateHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)] transition hover:-translate-y-0.5"
-              aria-label={`View certificate for ${item.title}`}
+            <button
+              onClick={() => setShowCertificate(!showCertificate)}
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-raised)] text-[var(--text-primary)]"
             >
               <Award size={20} />
-            </a>
+            </button>
           ) : null}
 
           <p className="min-w-[72px] text-left text-sm font-medium text-[var(--text-muted)] lg:text-right">
@@ -56,6 +55,13 @@ function TimelineCard({ item, index }) {
           </p>
         </div>
       </div>
+      {showCertificate && item.certificateImage && (
+        <img
+          src={item.certificateImage}
+          alt="Certificate"
+          className="mt-4 w-full rounded-xl border"
+        />
+      )}
     </motion.article>
   );
 }
