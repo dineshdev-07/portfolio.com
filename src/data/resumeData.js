@@ -37,7 +37,7 @@ export const resumeData = {
     },
     {
       title: "Tools & Platform",
-      items: ["Git", "GitHub", "VS Code", "Postman"],
+      items: ["Git", "GitHub", "VS Code", "Postman", "Vercel", "Render"],
     },
   ],
   projects: [
