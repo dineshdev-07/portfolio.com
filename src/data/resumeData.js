@@ -1,3 +1,8 @@
+import sdlc from '../assets/sdlc.png'
+import futurik from '../assets/Futurik.png'
+
+
+
 export const resumeData = {
   name: "Dinesh M",
   role: "Full-Stack MERN Developer",
@@ -67,7 +72,7 @@ export const resumeData = {
       period: "6 Months",
       type: "Experience",
       description: "Completed a 6-month MERN stack internship, developing modern web applications and RESTful APIs.",
-      certificateHref: "/sdlc.png",
+      certificateHref:sdlc,
     },
     {
       title: "Web Development Intern",
@@ -75,7 +80,7 @@ export const resumeData = {
       period: "1 Month",
       type: "Experience",
       description: "Hands-on internship experience in web development.",
-      certificateHref: "/certificates/intern-certificate.pdf",
+      certificateHref: futurik,
     },
   ],
 
