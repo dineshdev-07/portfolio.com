@@ -71,7 +71,7 @@ export default function Skills() {
     >
       <div className="grid gap-5 md:grid-cols-2">
         {skillGroups.map((group, index) => {
-          const MainIcon = group.icon;
+         
 
           return (
             <motion.div
@@ -92,12 +92,9 @@ export default function Skills() {
                 shadow-[var(--shadow-soft)]
               "
             >
-              <div className="mb-5 flex items-center gap-3">
-                <MainIcon size={28} />
-                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                  {group.title}
-                </h3>
-              </div>
+             <h3 className="mb-5 text-xl font-semibold text-[var(--text-primary)]">
+  {group.title}
+</h3>
 
               <div className="flex flex-wrap gap-3">
                 {group.skills.map((skill) => {
