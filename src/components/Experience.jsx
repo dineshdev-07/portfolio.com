@@ -55,12 +55,11 @@ function TimelineCard({ item, index }) {
         <div className="flex items-center justify-center gap-4 lg:justify-end">
           {hasCertificate ? (
             <button
-  onClick={() => setShowCertificate(true)}
-  className="inline-flex items-center gap-2 rounded-full border px-3 py-2"
->
-  <Award size={18} />
-  <span>View Certificate</span>
-</button>
+              onClick={() => window.open(item.certificateHref, "_blank")}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-soft)]"
+            >
+              <Award size={20} />
+            </button>
           ) : null}
 
           <p className="min-w-[72px] text-left text-sm font-medium text-[var(--text-muted)] lg:text-right">

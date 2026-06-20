@@ -12,7 +12,8 @@ import {
 
 import {
   SiJavascript,
-  SiVercel, SiRender ,
+  SiVercel,
+  SiRender,
   SiTailwindcss,
   SiExpress,
   SiMongodb,
@@ -23,40 +24,44 @@ import {
 const skillGroups = [
   {
     title: "Frontend",
-   
+
     skills: [
-      { name: "React", icon: FaReact },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "HTML5", icon: FaHtml5 },
-      { name: "CSS3", icon: FaCss3Alt },
-      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "React", icon: FaReact, color: "text-cyan-500" },
+      { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+      { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
+      { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
+      { name: "Tailwind", icon: SiTailwindcss, color: "text-sky-500" },
     ],
   },
   {
     title: "Backend",
-    
+
     skills: [
-      { name: "Node.js", icon: FaNodeJs },
-      { name: "Express.js", icon: SiExpress },
+      { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+      {
+        name: "Express.js",
+        icon: SiExpress,
+        color: "text-[var(--text-primary)]",
+      },
     ],
   },
   {
     title: "Database",
-   
+
     skills: [
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "MySQL", icon: SiMysql },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
+      { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
     ],
   },
   {
     title: "Tools",
-   
+
     skills: [
-      { name: "Git", icon: FaGitAlt },
-      { name: "GitHub", icon: FaGithub },
-      { name: "Postman", icon: SiPostman },
-      { name: "Vercel", icon: SiVercel},
-      { name: "Render", icon: SiRender}
+      { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
+      { name: "GitHub", icon: FaGithub, color: "text-[var(--text-primary)]" },
+      { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+      { name: "Vercel", icon: SiVercel, color: "text-[var(--text-primary)]" },
+      { name: "Render", icon: SiRender, color: "text-[var(--text-primary)]" },
     ],
   },
 ];
@@ -71,8 +76,6 @@ export default function Skills() {
     >
       <div className="grid gap-5 md:grid-cols-2">
         {skillGroups.map((group, index) => {
-         
-
           return (
             <motion.div
               key={group.title}
@@ -92,9 +95,9 @@ export default function Skills() {
                 shadow-[var(--shadow-soft)]
               "
             >
-             <h3 className="mb-5 text-xl font-semibold text-[var(--text-primary)]">
-  {group.title}
-</h3>
+              <h3 className="mb-5 text-xl font-semibold text-[var(--text-primary)]">
+                {group.title}
+              </h3>
 
               <div className="flex flex-wrap gap-3">
                 {group.skills.map((skill) => {
@@ -118,8 +121,8 @@ export default function Skills() {
                         hover:-translate-y-1
                       "
                     >
-                      <Icon size={18} />
-                      <span>{skill.name}</span>
+                      <Icon size={20} />
+                      className={skill.color}
                     </div>
                   );
                 })}
