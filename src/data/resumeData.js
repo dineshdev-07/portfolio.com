@@ -18,28 +18,28 @@ export const resumeData = {
     { label: "Projects", value: "1" },
     { label: "Location", value: "Madurai" },
   ],
-  // skills: [
-  //   {
-  //     title: "Language",
-  //     items: ["JavaScript (ES6)"],
-  //   },
-  //   {
-  //     title: "Frontend",
-  //     items: ["HTML5", "CSS3", "React.js", "Bootstrap", "Tailwind CSS"],
-  //   },
-  //   {
-  //     title: "Backend",
-  //     items: ["Node.js", "Express.js"],
-  //   },
-  //   {
-  //     title: "Database",
-  //     items: ["MongoDB", "MySQL"],
-  //   },
-  //   {
-  //     title: "Tools & Platform",
-  //     items: ["Git", "GitHub", "VS Code", "Postman"],
-  //   },
-  // ],
+  skills: [
+    {
+      title: "Language",
+      items: ["JavaScript (ES6)"],
+    },
+    {
+      title: "Frontend",
+      items: ["HTML5", "CSS3", "React.js", "Bootstrap", "Tailwind CSS"],
+    },
+    {
+      title: "Backend",
+      items: ["Node.js", "Express.js"],
+    },
+    {
+      title: "Database",
+      items: ["MongoDB", "MySQL"],
+    },
+    {
+      title: "Tools & Platform",
+      items: ["Git", "GitHub", "VS Code", "Postman"],
+    },
+  ],
   projects: [
     {
       title:
